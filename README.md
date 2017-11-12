@@ -5,6 +5,8 @@ Prosty i skuteczny wrapper dla API serwera fCraft.pl
 - Prostota - tylko dwie metody get oraz post umożliwiają wykonanie [dowolnego zapytania API](https://fcraft.pl/dzia%C5%82-dokumentacja-53) w jednej linijce.
 - Pełna obsługa błędów - zarówno [zwracanych przez API](https://fcraft.pl/temat-kody-b%C5%82%C4%99d%C3%B3w-api-1492) jak i niespodziewanych.
 - Rzadkie aktualizacje - nowe funkcjonalności API nie wymagają aktualizacji wrappera.
+## Instalacja
+- Skopiuj plik https://github.com/Libter/api.fCraft.pl-PHP/blob/master/fCraftWrapper.php na swój serwer `WWW`.
 ## Przykład
 Kod: https://github.com/Libter/api.fCraft.pl-PHP/blob/master/example.php
 
