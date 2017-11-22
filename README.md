@@ -12,23 +12,19 @@ Kod: https://github.com/Libter/api.fCraft.pl-PHP/blob/master/example.php
 
 Wynik: 
 ```
-stdClass Object
-(
-    [nick] => Libter
-    [uuid] => 640a8815-bd49-4705-9a9c-061a387092ac
-    [premium] => stdClass Object
-        (
-            [first] => 1
-            [last] => 1
-        )
-
-    [time] => stdClass Object
-        (
-            [first] => 1480583125
-            [last] => 1510317039
-        )
-
-)
+object(stdClass)#2 (3) {
+  ["pvp"]=>
+  bool(false)
+  ["sex"]=>
+  string(4) "male"
+  ["sharing"]=>
+  object(stdClass)#4 (2) {
+    ["statistics"]=>
+    bool(false)
+    ["topbalances"]=>
+    bool(false)
+  }
+}
 stdClass Object
 (
     [Libter] => 640a8815-bd49-4705-9a9c-061a387092ac
@@ -37,8 +33,8 @@ stdClass Object
 
 stdClass Object
 (
-    [error] => INVALID_NICK
-    [code] => 400
+    [error] => UNKNOWN
+    [code] => 404
 )
 stdClass Object
 (
