@@ -20,16 +20,23 @@ class fCraftWrapper {
         ];
     }
     
-    public function get($url, $args) {
-        $url = "{$this->url}{$url}?key0={$this->key0}&".http_build_query($args);
-        return $this->request($url, $this->getOptions);
+    public function get($url, $args, $data) {
+        $this->prepare($url, $args, $data);
+        return $this->request("{$this->url}{$url}?".http_build_query($data), $this->getOptions);
     }
     
-    public function post($url, $args) {
-        $url = "{$this->url}{$url}?key0={$this->key0}";
+    public function post($url, $args, $data) {
+        $this->prepare($url, $args, $data);
         $options = $this->postOptions;
-        $options['http']['content'] = http_build_query($args);
-        return $this->request($url, $options);
+        $options['http']['content'] = http_build_query($data);
+        return $this->request("{$this->url}{$url}", $options);
+    }
+    
+    private function prepare(&$url, $args, &$data) {
+        $data['key0'] = $this->key0;
+        foreach ($args as $key => $val) {
+            $url = str_replace("\{$key\}", urlencode($val), $url);
+        }
     }
     
     private function request($url, $options) {
